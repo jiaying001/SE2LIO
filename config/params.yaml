@@ -1,0 +1,52 @@
+%YAML:1.0
+
+common:
+    core_num: 3
+    init_frame: 20
+    nearby_frame: 6
+
+    Tbl: !!opencv-matrix
+       rows: 4
+       cols: 4
+       dt: d
+       data: [1.0, 0.0, 0.0, 0.0,
+              0.0, 1.0, 0.0, 0.0,
+              0.0, 0.0, 1.0, 0.0,
+              0.0, 0.0, 0.0, 1.0]
+
+lidar:  
+    frequency: 30 
+    scan_line: 16
+    scan_period: 0.1
+    min_distance: 1.0           
+    max_distance: 90.0                               
+    vertical_angle: 2.0
+    odom_n_rpy: 1.0e-2        
+    odom_n_xyz: 1.0e-2
+    local_map_resolution: 0.4 
+    local_map_size: 100.0 
+    edge_n: 1.0e-4
+    surf_n: 1.0e-4
+    planmotion_rotx: 1.0e-4
+    planmotion_roty: 1.0e-4
+    planmotion_z: 1.0e-4
+    sigma_uscale: 0.01
+
+    # mapping thread
+    map_resolution: 0.4 
+    map_cell_width: 50.0
+    map_cell_height: 50.0
+    map_cell_depth: 50.0
+    map_cell_width_range: 2 
+    map_cell_height_range: 2 
+    map_cell_depth_range: 2 
+
+imu:
+    # note that we follow the value unit from kalibr  link:https://github.com/ethz-asl/kalibr/wiki/IMU-Noise-Model
+    frequency: 200 
+    acc_n: 0.001   # 1.176e-2m/s^2 * 1/sqrt(Hz) continuous time noise
+    gyr_n: 0.000045   # 2.443e-3rad/s * 1/sqrt(Hz) continuous time noise
+    acc_w: 2.0e-04   # m/s^3 * 1/sqrt(Hz) continuous time
+    gyr_w: 1.0e-4   # rad/s^2 * 1/sqrt(Hz) continuous time
+
+
